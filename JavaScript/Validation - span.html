@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation Example</title>
+  <style>
+    .error-message {
+      color: red;
+      font-size: 1em;
+    }
+    .success-message {
+      color: green;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Form Validation</h2>
+<form id="myForm">
+  <label for="firstname">First Name:</label>
+  <input type="text" id="firstname" name="firstname"><br><br>
+  
+  <label for="lastname">Last Name:</label>
+  <input type="text" id="lastname" name="lastname"><br>
+  
+  <span id="nameError"></span><br><br>
+  
+  <button type="button" onclick="validateForm()">Submit</button>
+</form>
+
+<span id="formMessage" ></span>
+
+<script>
+  function validateForm() {
+    // Get the values of the input fields
+    const firstName = document.getElementById("firstname").value.trim();
+    const lastName = document.getElementById("lastname").value.trim();
+    const nameError = document.getElementById("nameError");
+    const formMessage = document.getElementById("formMessage");
+    
+    // Clear any previous messages
+    nameError.textContent = "";
+    formMessage.textContent = "";
+
+    // Check if either field is empty
+    if (firstName === "") {
+      nameError.textContent = "First name is required.";
+      return; // Stop further execution
+    }
+    
+    if (lastName === "") {
+      nameError.textContent = "Last name is required.";
+      return; // Stop further execution
+    }
+    
+    // If both fields are filled, display a success message
+    formMessage.textContent = "Form submitted successfully!";
+  }
+</script>
+
+</body>
+</html>

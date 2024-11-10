@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Table Using DIV</title>
+  <style>
+    .table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1px solid #333;
+    }
+    .header, .cell {
+      padding: 10px;
+      border: 1px solid #333;
+    }
+    .header {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Sample Table Using DIV</h2>
+
+<div class="table">
+  <div class="header">Name</div>
+  <div class="header">Age</div>
+  <div class="header">City</div>
+  
+  <div class="cell">John Doe</div>
+  <div class="cell">28</div>
+  <div class="cell">New York</div>
+  
+  <div class="cell">Jane Smith</div>
+  <div class="cell">34</div>
+  <div class="cell">Los Angeles</div>
+  
+  <div class="cell">Mike Johnson</div>
+  <div class="cell">45</div>
+  <div class="cell">Chicago</div>
+</div>
+
+</body>
+</html>
