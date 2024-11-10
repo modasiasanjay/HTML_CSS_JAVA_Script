@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Numbers Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #e0f7fa; /* Light cyan background */
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        .number {
+            position: absolute;
+            font-size: 2rem; /* Adjust size as needed */
+            color: #ff4081; /* Pink color for visibility */
+            user-select: none;
+            pointer-events: none;
+            animation: flutter 0.8s infinite alternate ease-in-out;
+        }
+        @keyframes flutter {
+            from {
+                transform: rotate(-10deg);
+            }
+            to {
+                transform: rotate(10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const numberOfElements = 9;
+            const maxWidth = window.innerWidth;
+            const maxHeight = window.innerHeight;
+            const numbers = Array.from({ length: numberOfElements }, (_, i) => i + 1);
+
+            function getRandomPosition() {
+                return {
+                    x: Math.random() * (maxWidth - 40), // Subtracting 40 to ensure the number stays within bounds
+                    y: Math.random() * (maxHeight - 40) // Subtracting 40 for the same reason
+                };
+            }
+
+            function createNumberElement(number) {
+                const div = document.createElement('div');
+                div.className = 'number';
+                div.textContent = number;
+                document.body.appendChild(div);
+                return div;
+            }
+
+            function moveElement(element) {
+                const { x, y } = getRandomPosition();
+                element.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            // Create and move all number elements
+            const elements = numbers.map(createNumberElement);
+            elements.forEach(element => {
+                moveElement(element);
+                setInterval(() => moveElement(element), 2000); // Move every 2 seconds
+            });
+        });
+    </script>
+
+</body>
+</html>
