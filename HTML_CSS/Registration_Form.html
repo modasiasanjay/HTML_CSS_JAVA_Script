@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Page background and center alignment */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 200px;
+        }
+
+        /* Form container styling with border */
+        .form-container {
+            background-color: #ffffff;
+            padding: 28px;
+            border-radius: 5px;
+            width: 760px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Title styling with debug border */
+        .form-container h2 {
+            text-align: center;
+            color: #00796b;
+            margin: 0 0 20px;
+            font-size: 24px;
+            border: 1px solid black; /* Debug border to verify visibility */
+			border-radius:7px
+        }
+
+        /* Label and input styling */
+        .form-container label {
+            display: block;
+            margin: 8px 0 4px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="date"],
+        .form-container input[type="tel"],
+        .form-container input[type="number"],
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Button styling */
+        .form-container input[type="submit"],
+        .form-container input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+        }
+
+        .form-container input[type="reset"] {
+            background-color: #f44336;
+        }
+
+        /* Hover effect for buttons */
+        .form-container input[type="submit"]:hover,
+        .form-container input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+
+        /* Align buttons next to each other */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Checkbox styling */
+        .form-container .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Registration Form</h2> <br>
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="hobbies">Hobbies:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+            <label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+            <label><input type="checkbox" name="hobbies" value="traveling"> Traveling</label>
+        </div>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="india">India</option>
+            <option value="australia">Australia</option>
+        </select>
+
+        <label for="state">State:</label>
+        <select id="state" name="state">
+            <option value="state1">Karnataka</option>
+            <option value="state2">Gujarat</option>
+            <option value="state3">Assam</option>
+			 <option value="state3">Bihar</option>
+			  <option value="state3">Rajsthan</option>
+        </select>
+
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            <option value="city1">City 1</option>
+            <option value="city2">City 2</option>
+            <option value="city3">City 3</option>
+        </select>
+
+        <div class="button-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
